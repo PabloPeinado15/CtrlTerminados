@@ -1,0 +1,23 @@
+mat-form-field {
+  width: 100%;
+}
+
+ots-chips-input {
+  width: 100%;
+}
+
+.example-header-image {
+  background-image: url('./../../../assets/avatar/avatar.png');
+  background-size: cover;
+}
+
+.additional-data-client {
+  color: #202020; 
+  /* margin-top: 14px; 
+  margin-left: 14px */
+}
+
+.mat-card-name-client {
+  margin-top: 12px; 
+  margin-left: 5px;
+}

@@ -1,0 +1,114 @@
+<form #orderForm="ngForm" novalidate (ngSubmit)="orderForm.valid && addOrder()">
+
+  <div fxLayout="column" fxLayoutGap="25px">
+
+    <div fxFlex="calc(50% - 40px)"> 
+      <mat-form-field>
+        <input #clienteFormControl="ngModel" [(ngModel)]="modelPedidos.client" [matAutocomplete]="autocomplete" 
+        type="text" name="cliente-seleccionado" placeholder="Seleccione el cliente" matInput (blur)="checkClient()" required tabindex="1">
+        
+        <mat-autocomplete #autocomplete="matAutocomplete" [displayWith]="displayFn" (optionSelected)="clientSelectedHandler($event)">
+          <mat-option #matOptionClients *ngFor="let cliente of filteredOptions$ | async; let i = index" [value]="cliente">
+            {{ cliente.name }}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="clienteFormControl.hasError('required') && !clienteFormControl.untouched">
+          Debe seleccionar el cliente
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="50px">
+          
+      <div fxFlex="calc(50% - 40px)">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title #titleMatCard class="mat-card-name-client"> {{ selectedClient?.name || "Cliente" }}</mat-card-title>
+              <mat-card-subtitle class="additional-data-client">
+                
+                <div *ngIf="editActive || addActive; else blockNoEditing">
+                  <form [formGroup]="clientFormGroup" (ngSubmit)="editClient()" #editClientForm>
+                    <mat-form-field>
+                      <input matInput formControlName="nameFormControl" placeholder="Nombre del cliente" required>
+                    </mat-form-field>
+                    <mat-error *ngIf="!clientFormGroup.get('nameFormControl').valid">
+                      Debe introducir un nombre
+                    </mat-error>
+                    <mat-form-field>
+                      <input matInput formControlName="emailFormControl" placeholder="Correo electrónico">
+                    </mat-form-field>
+                    <mat-error *ngIf="!clientFormGroup.get('emailFormControl').valid">
+                      Introduzca una dirección válida
+                    </mat-error>
+                    <mat-form-field>
+                      <input matInput formControlName="tlfFormControl" placeholder="Teléfono">
+                    </mat-form-field>
+                    <mat-error *ngIf="!clientFormGroup.get('tlfFormControl').valid">
+                      Número de contacto erróneo
+                    </mat-error>
+
+                    <mat-error *ngIf="(clientFormGroup.get('emailFormControl').value.length === 0) && (clientFormGroup.get('tlfFormControl').value.length === 0)">
+                      Introduzca al menos un método de contacto
+                    </mat-error>
+                  </form>
+                </div>
+                <ng-template #blockNoEditing>
+                  <p>
+                    Correo Electrónico: <br>
+                    <span style="margin: 10px; margin-top: 10px"> {{ selectedClient?.email || "-"}} </span>
+                  </p>
+      
+                  <p> 
+                    Teléfono: <br>
+                    <span style="margin: 10px;"> {{ selectedClient?.tlf || "-"}} </span>
+                  </p>
+                </ng-template>
+      
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button type="button" tabindex="-1" mat-button (click)="activateAdding()" *ngIf="addActive==false && editActive==false"> Añadir </button>
+              <button type="button" tabindex="-1" mat-button (click)="activateEditing()" *ngIf="editActive==false && addActive==false && selectedClient"> Editar </button>
+              <button type="button" tabindex="-1" mat-button (click)="clientFormGroup.valid && editClient('EDIT')" *ngIf="editActive" [disabled]="!clientFormGroup.valid"> Modificar </button>
+              <button type="button" tabindex="-1" mat-button (click)="clientFormGroup.valid && editClient('ADD')" *ngIf="addActive" [disabled]="!clientFormGroup.valid"> Guardar </button>
+              <button type="button" tabindex="-1" mat-button *ngIf="editActive || addActive" (click)="editActive=false; addActive=false;"> Cancelar </button>
+              <button type="button" tabindex="-1" mat-button (click)="editClient('DELETE')" *ngIf="selectedClient">Eliminar</button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+      <div fxFlex="calc(50% - 40px)">
+        <div fxLayout="column" fxLayoutGap="20px" fxFlexAlign="center center">
+          <div fxFlex="calc(50% - 40px)">
+            <mat-form-field>
+              <input placeholder="Número de pedido" type="text" #orderFormField="ngModel" matInput [(ngModel)]="modelPedidos.id" name="idPedido" required tabindex="2">
+              <mat-error *ngIf="orderFormField.hasError('required') && !orderFormField.untouched">
+                Introduzca el número de pedido
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="calc(50% - 40px)">
+            <ots-chips-input [dataModel]="modelPedidos"></ots-chips-input>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div fxFlexAlign="center">
+      <button mat-raised-button color="primary" [disabled]="!orderForm.valid || modelPedidos.ots.length === 0"> Añadir </button>
+    </div>
+
+  </div>
+<!-- 
+  {{ diagnostic }}
+
+  {{ selectedClient?.name }} -->
+
+</form>
+

@@ -1,0 +1,71 @@
+<app-angular-loader></app-angular-loader>
+
+<mat-sidenav-container color="accent" fullscreen>
+  <mat-sidenav #sidenav mode="push" autoFocus="false" class="the-dark-theme mat-sidenav__container">
+    <mat-toolbar color="primary">
+      <!-- rellena el espacio restante -->
+      <span class="fill-remaining-space__toolbar"></span>
+
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon aria-label="Cerrar">
+          close
+        </mat-icon>
+      </button>
+
+    </mat-toolbar>
+    
+    <span class="fill-remaining-space__toolbar"></span>
+    <mat-nav-list>
+      <mat-list-item routerLinkActive="active">
+        <a routerLink="/operarios">
+          <mat-icon aria-hidden="true">people</mat-icon>
+          <span class="sidenav-menu__item"> Panel de operarios </span>
+        </a>
+      </mat-list-item>
+    
+      <mat-list-item routerLinkActive="active">
+        <a routerLink="/administradores">  
+          <mat-icon  aria-hidden="true">view_compact</mat-icon>
+          <span class="sidenav-menu__item"> Panel de administración </span>
+        </a>
+      </mat-list-item>
+      
+      <mat-list-item routerLinkActive="active">
+        <a routerLink="/configuracion">
+          <mat-icon  aria-hidden="true">settings</mat-icon>
+          <span class="sidenav-menu__item"> Configuración </span>
+        </a>
+      </mat-list-item>
+      <!-- <mat-list-item routerLinkActive="active">
+        <a routerLink="/historial">
+          <mat-icon  aria-hidden="true">history</mat-icon>
+          <span class="sidenav-menu__item"> Registro </span>
+        </a>
+      </mat-list-item> -->
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <!-- <app-angular-loader></app-angular-loader> -->
+
+    <!-- Toolbar superior -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>
+          menu
+        </mat-icon>
+      </button>
+    
+      <span id='textWelcome'> Bienvenido</span>
+      
+      <!-- rellena el espacio restante -->
+      <span class="fill-remaining-space__toolbar"></span>
+
+    </mat-toolbar>
+
+    <router-outlet> </router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

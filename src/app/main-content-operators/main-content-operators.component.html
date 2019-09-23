@@ -1,0 +1,47 @@
+<ng-container>
+
+  <form #otsForm="ngForm" novalidate (ngSubmit)="!operatorSelect.hasError('required') && otsSelected.length > 0 && setOtsFinished()">
+
+    <div fxLayout="column" fxLayoutGap="50px" fxLayoutAlign="center" style="width: calc(100% - 160px); margin: 80px;">
+      
+      <div fxLayout="row" fxLayoutGap="50px">
+
+        <div fxFlex="calc(50% - 40px)">
+          <mat-form-field>
+            <mat-select required #idSelectOperators ariaLabel="OT" placeholder="Seleccione su nombre de operario"
+            [formControl]="operatorSelect" [(value)]="operatorSelected">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let operator of dataSelectOperators" [value]=operator>
+                {{ operator.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="operatorSelect.hasError('required')">
+              Debe seleccionar un operario de la lista
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div>
+        <table-operators (otsSelectedEventEmitter)="handlerOtsEvents($event)"></table-operators>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign=" center">
+        <!-- <div>
+          <p> {{ operatorSelectedOnSelect }} </p>
+        </div>
+
+        <div>
+          <p> {{ showOtsSelected }} </p>
+        </div> -->
+
+        <div fxFlex="calc(80% - 40px)">
+          <button mat-raised-button color="primary" [disabled]=""> Marcar terminados </button>
+        </div> 
+      </div>
+
+    </div>
+
+  </form>
+
+</ng-container>

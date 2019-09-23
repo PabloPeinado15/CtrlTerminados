@@ -1,0 +1,19 @@
+<mat-form-field style="width: 100%;">
+  <mat-chip-list required #chipList>
+    <mat-chip *ngFor="let ot of dataModel.ots" [selectable]="selectable"
+      [removable]="removable" (removed)="remove(ot)">
+      {{ ot }}
+      <mat-icon matChipRemove *ngIf="removable"> cancel </mat-icon>
+    </mat-chip>
+    <input 
+      placeholder="Ots del pedido {{ dataModel.id }}" 
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)"
+      onlyNumber="true" type="text" [(ngModel)]="dataModel[3]" name="otsList" #chipInput="ngModel" value="[]" tabindex="3">
+    <mat-error *ngIf="dataModel.ots.length === 0">
+      Debe introducir al menos una Ot
+    </mat-error>
+  </mat-chip-list>
+</mat-form-field>

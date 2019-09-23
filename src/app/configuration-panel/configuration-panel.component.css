@@ -1,0 +1,38 @@
+.example-container {
+  height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+:host /deep/ div#dropZone.drop-zone {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  width: 250px;
+  text-align: center;
+  padding: 10px;
+  border: 2px dashed #e42a20;
+  border-radius: 0px;
+  /* box-shadow: 
+    0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 2px rgba(0, 0, 0, 0.12); */
+}
+
+:host /deep/ div#dropZone.drop-zone.over {
+  background-color: #ef7e77;
+}
+
+:host /deep/ div#dropZone.drop-zone.over .content {
+  color: white;
+}
+
+:host /deep/ div#dropZone.drop-zone .content {
+  color: rgb(58, 58, 58);
+}
+
+h2.intro {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

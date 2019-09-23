@@ -1,0 +1,94 @@
+Mejora de obtención de datos de cloud firestore y mostrado en formulario.
+https://blog.thecodecampus.de/getting-started-firestore-angularfire2/
+
+Ejemplos de código para incluir la funcionalidad de la obtención de datos 
+de firebase desde un servicio y así separar responsabilidades
+https://stackoverflow.com/questions/47261190/angular-material-mattabledatasource-with-firestore
+
+https://medium.com/@coderonfleek/firebase-firestore-and-angular-todo-list-application-d0fe760f6bca
+
+Angular fire documentation
+https://github.com/firebase/angularfire#documentation
+
+https://blog.rangle.io/observables-and-reactive-programming-in-angular-2/
+
+https://stackoverflow.com/questions/45659742/angular4-no-value-accessor-for-form-control/45659791
+
+https://medium.com/aviabird/ngif-else-lands-in-angular-2-0-a242940e54ff
+
+https://www.uno-de-piera.com/scroll-infinito-angular-6-firestore/
+
+REDUX
+https://medium.freecodecamp.org/understanding-redux-the-worlds-easiest-guide-to-beginning-redux-c695f45546f6
+
+Migrating SQL database to NoSQL
+https://rstudio-pubs-static.s3.amazonaws.com/171661_4ddfcc8e037a453aa3fb2cb56cc99f04.html
+
+Foreign key NoSQL
+https://stackoverflow.com/questions/5841681/mongodb-normalization-foreign-key-and-joining
+
+Build Redux Style Applications with Angular, RxJS, and ngrx/store
+https://egghead.io/courses/build-redux-style-applications-with-angular-rxjs-and-ngrx-store
+
+Send Emails
+https://stackoverflow.com/questions/45087993/custom-email-with-firebase-and-angular
+https://www.mailgun.com/
+https://sendgrid.com/pricing/
+https://nodemailer.com/about/
+
+Email Node.js
+https://email-templates.js.org/#/
+
+https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+
+https://material.io/tools/color/#!/?view.left=1&view.right=1&primary.color=e42b21&secondary.color=ffffff&secondary.text.color=000000&primary.text.color=ffffff
+
+https://material.angular.io/guide/theming
+
+Create a custom theme for angular material
+https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+
+Enlaces de navegación en sidenav lateral izquierdo.
+https://embed.plnkr.co/jAVScZ/
+
+Icon animated
+https://stackoverflow.com/questions/38072064/hamburger-icon-animation-using-md-icon-tag
+
+Change the default background color to mat-sidenav
+https://stackblitz.com/edit/basic-sidenav-kcdgmr?file=styles.scss
+https://github.com/angular/material2/issues/4344
+
+change hover of button
+https://stackoverflow.com/questions/44342158/how-can-i-change-angular-material-button-background-color-on-hover-state
+https://angular.io/guide/component-styles#deprecated-deep--and-ng-deep
+https://blog.angular-university.io/angular-host-context/
+
+flex-layout anteriormente pertenecía a angular material:
+https://github.com/angular/flex-layout
+https://github.com/angular/flex-layout/wiki
+https://medium.com/@nima_ap/creating-a-responsive-dashboard-in-angular-5-from-scratch-147f6a493d9e
+https://ampersandacademy.com/tutorials/angular-material/responsive-grid-layout-in-angular-material
+https://medium.com/letsboot/quick-start-with-angular-material-and-flex-layout-1b065aa1476c
+https://www.amadousall.com/the-good-parts-of-bootstrap-4-you-are-missing-in-your-angular-material-projects/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Incoveniente con FlexLayoutModule que obliga a importarlo en cada módulo que lo use.
+Solución usar un SharedModule:
+https://stackoverflow.com/questions/41907515/how-to-use-a-component-in-multiple-places-via-a-sharedmodule-in-angular2
+
+Paginación
+http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
+
+Testing
+https://angular.io/guide/testing
+
+Event binding
+https://angular.io/guide/template-syntax#event-binding
+
+Reactive sticky header
+https://netbasal.com/reactive-sticky-header-in-angular-12dbffb3f1d3
+
+Otros enlaces:
+https://www.freelancermap.com/freelancer-tips/es/12255-forroot-forchild-modulos-angular
+https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/
+https://codecraft.tv/courses/angular/custom-directives/hostlistener-and-hostbinding/
