@@ -28,7 +28,7 @@
     "@angular/service-worker": "7.0.3",
     "@types/socket.io": "^2.1.0",
     "core-js": "^2.4.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "file-saver": "^2.0.0",
     "ngx-file-drop": "^5.0.0",
     "ngx-papaparse": "^3.0.2",
